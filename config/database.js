@@ -5,12 +5,12 @@ module.exports = ({ env }) => ({
       connector: 'bookshelf',
       settings: {
         client: 'postgres',
-        host: env('DATABASE_HOST'),
-        port: env.int('DATABASE_PORT'),
-        database: env('DATABASE_NAME'),
-        username: env('DATABASE_USERNAME'),
-        password: env('DATABASE_PASSWORD'),
-        ssl: env.bool('DATABASE_SSL'),
+        host: 'https://ec2-54-91-178-234.compute-1.amazonaws.com',
+        port: '5432',
+        database: 'd3bgqvc6mmaei1',
+        username: 'vgqpubuoxylsaa',
+        password: 'ac21b7ac1187a5ed97c3a802272c9e32ead0ac01bb5ad6f80a29a4588568cda6',
+        ssl: false,
       },
       options: {}
     },
