@@ -11,7 +11,7 @@
  */
 
 module.exports = async () => {   
-    
+    /*    
     const isStartup = await strapi.query('settings').count()
 
     if ( !isStartup ){
@@ -249,7 +249,7 @@ module.exports = async () => {
         }
         const createTheme = await strapi.query('theme').create(theme)
     }
-
+    */
 
     
 };
