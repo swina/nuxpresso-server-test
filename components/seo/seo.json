@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_seo_seos",
+  "info": {
+    "name": "SEO",
+    "icon": "search-dollar"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "text",
+      "default": "Create a website using NuxtJS and Strapi"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Articles",
+  "info": {
+    "name": "Article"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "excerpt": {
+      "type": "richtext"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "categories": {
+      "collection": "category"
+    },
+    "gallery": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "slug": {
+      "type": "string"
+    },
+    "homepage": {
+      "type": "boolean",
+      "default": false
+    },
+    "menu": {
+      "type": "boolean",
+      "default": false
+    },
+    "random_image": {
+      "type": "boolean",
+      "default": false
+    },
+    "list_exclude": {
+      "type": "boolean",
+      "default": false
+    },
+    "parent": {
+      "model": "article"
+    },
+    "tags": {
+      "type": "text"
+    },
+    "image_title": {
+      "type": "string"
+    },
+    "template": {
+      "model": "template"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "SEO": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "collectionName": "components_widgets_maps",
+  "info": {
+    "name": "Map",
+    "icon": "map-marked"
+  },
+  "options": {},
+  "attributes": {
+    "longitude": {
+      "type": "string"
+    },
+    "latitude": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "string"
+    },
+    "traffic": {
+      "type": "boolean",
+      "default": false
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "default",
+        "terrain"
+      ]
+    },
+    "ui": {
+      "type": "boolean"
+    },
+    "draw": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "line",
+        "polygon",
+        "overlay"
+      ]
+    },
+    "image_overlay": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "draw_fill_color": {
+      "type": "string"
+    },
+    "draw_stroke_color": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

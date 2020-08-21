@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_seo_tags",
+  "info": {
+    "name": "Tag",
+    "icon": "tag"
+  },
+  "options": {},
+  "attributes": {
+    "tag": {
+      "type": "string"
+    }
+  }
+}

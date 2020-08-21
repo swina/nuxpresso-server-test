@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_widgets_buttons",
+  "info": {
+    "name": "button",
+    "icon": "mouse"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "link_url": {
+      "type": "string",
+      "default": "#"
+    },
+    "enabled": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

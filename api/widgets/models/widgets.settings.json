@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "widgets",
+  "info": {
+    "name": "widgets"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "component": {
+      "type": "dynamiczone",
+      "components": [
+        "widgets.cta",
+        "widgets.button",
+        "widgets.features",
+        "widgets.logo",
+        "widgets.multi-box",
+        "widgets.map",
+        "widgets.slider-pro",
+        "widgets.timeline",
+        "widgets.video",
+        "forms.form",
+        "widgets.gpdr"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "class": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "fullwidth": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_forms_fields",
+  "info": {
+    "name": "field",
+    "icon": "keyboard"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "textarea",
+        "password",
+        "email",
+        "number",
+        "range",
+        "select",
+        "checkbox",
+        "radio",
+        "submit",
+        "hidden"
+      ]
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "label": {
+      "type": "string"
+    },
+    "default": {
+      "type": "string"
+    }
+  }
+}

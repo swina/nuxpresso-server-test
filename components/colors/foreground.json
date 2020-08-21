@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_colors_foregrounds",
+  "info": {
+    "name": "foreground",
+    "icon": "arrow-alt-circle-up"
+  },
+  "options": {},
+  "attributes": {
+    "density": {
+      "type": "enumeration",
+      "enum": [
+        "extralight",
+        "verylight",
+        "light",
+        "mediumlight",
+        "normal",
+        "mediumdark",
+        "dark",
+        "verydark",
+        "extradark"
+      ]
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "transparent",
+        "white",
+        "black",
+        "gray",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "blue",
+        "indigo",
+        "purple",
+        "pink"
+      ]
+    },
+    "css": {
+      "type": "string"
+    },
+    "tw_color": {
+      "type": "string"
+    }
+  }
+}

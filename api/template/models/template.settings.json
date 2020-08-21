@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "templates",
+  "info": {
+    "name": "Template"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "component",
+      "repeatable": true,
+      "component": "themes.template"
+    },
+    "fields_col_2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "themes.template"
+    },
+    "class": {
+      "type": "string"
+    },
+    "homepage": {
+      "type": "boolean"
+    },
+    "default": {
+      "type": "boolean",
+      "default": false
+    },
+    "fields_col_3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "themes.template"
+    },
+    "col_1_class": {
+      "type": "string",
+      "required": false
+    },
+    "col_2_class": {
+      "type": "string"
+    },
+    "col_3_class": {
+      "type": "string"
+    }
+  }
+}

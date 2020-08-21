@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_widgets_multi_boxes",
+  "info": {
+    "name": "Multi Box",
+    "icon": "box-open"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "widgets.features"
+    },
+    "class": {
+      "type": "string"
+    },
+    "vertical": {
+      "type": "boolean",
+      "default": true
+    },
+    "text_position": {
+      "type": "enumeration",
+      "enum": [
+        "right",
+        "left"
+      ],
+      "default": "right"
+    },
+    "max_columns": {
+      "type": "integer",
+      "default": 2,
+      "max": 5,
+      "min": 1
+    }
+  }
+}

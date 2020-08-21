@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_widgets_time_events",
+  "info": {
+    "name": "Time Event",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "time": {
+      "type": "string"
+    },
+    "event": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_themes_templates",
+  "info": {
+    "name": "Template",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "title",
+        "author",
+        "date",
+        "tags",
+        "categories",
+        "related",
+        "image",
+        "content",
+        "excerpt"
+      ]
+    },
+    "class": {
+      "type": "string"
+    },
+    "shortcode": {
+      "type": "string"
+    },
+    "widget": {
+      "model": "widgets"
+    },
+    "menu": {
+      "model": "menus"
+    },
+    "textbox": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "random_image": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

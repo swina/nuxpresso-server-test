@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_widgets_ctas",
+  "info": {
+    "name": "cta",
+    "icon": "briefcase"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "button": {
+      "type": "boolean"
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "cta_"
+    },
+    "link_url": {
+      "type": "string"
+    },
+    "background": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.colors"
+    }
+  }
+}

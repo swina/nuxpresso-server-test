@@ -1,0 +1,56 @@
+{
+  "collectionName": "components_colors_colors",
+  "info": {
+    "name": "Colors",
+    "icon": "paint-roller"
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "transparent",
+        "white",
+        "black",
+        "gray",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "blue",
+        "indigo",
+        "purple",
+        "pink"
+      ]
+    },
+    "density": {
+      "type": "enumeration",
+      "enum": [
+        "extralight",
+        "verylight",
+        "light",
+        "mediumlight",
+        "normal",
+        "mediumdark",
+        "dark",
+        "verydark",
+        "extradark"
+      ]
+    },
+    "css": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

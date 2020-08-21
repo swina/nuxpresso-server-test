@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_widgets_logos",
+  "info": {
+    "name": "Logo",
+    "icon": "image"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "headline": {
+      "type": "string"
+    },
+    "show_name": {
+      "type": "boolean",
+      "default": false
+    },
+    "show_headline": {
+      "type": "boolean",
+      "default": false
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

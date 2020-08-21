@@ -1,0 +1,793 @@
+{
+  "paths": {
+    "/settings": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the settings's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve settings document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Settings"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Settings"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single settings record",
+        "responses": {
+          "200": {
+            "description": "Retrieve settings document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Settings"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Settings"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewSettings"
+              }
+            }
+          }
+        },
+        "parameters": []
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single settings record",
+        "responses": {
+          "200": {
+            "description": "deletes a single settings based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Settings"
+        ],
+        "parameters": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Settings": {
+        "required": [
+          "id",
+          "site_name",
+          "current_theme"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "site_name": {
+            "type": "string",
+            "default": "nuxpresso"
+          },
+          "site_title": {
+            "type": "string",
+            "default": "Just a nuxpresso site"
+          },
+          "show_title": {
+            "type": "boolean",
+            "default": false
+          },
+          "footer": {
+            "type": "string",
+            "default": "nuxpresso - Created with NuxtJS / Strapi / Tailwindcss "
+          },
+          "logo_svg": {
+            "type": "string"
+          },
+          "logo_img": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              }
+            }
+          },
+          "email": {
+            "type": "string"
+          },
+          "github": {
+            "type": "string"
+          },
+          "twitter": {
+            "type": "string"
+          },
+          "homepage": {
+            "type": "string",
+            "default": "page",
+            "enum": [
+              "page",
+              "last_posts",
+              "page_and_last_posts"
+            ]
+          },
+          "articles_limit": {
+            "type": "integer",
+            "default": 4
+          },
+          "seo": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "default": "Create a website using NuxtJS and Strapi"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "header": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "autoimage": {
+            "type": "boolean",
+            "default": true
+          },
+          "breadcrumb": {
+            "type": "boolean",
+            "default": true
+          },
+          "darkmode": {
+            "type": "boolean",
+            "default": true
+          },
+          "current_theme": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "theme": {
+                "required": [
+                  "id",
+                  "name",
+                  "header"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "json": {
+                    "type": "object"
+                  },
+                  "theme": {
+                    "type": "string"
+                  },
+                  "header": {
+                    "type": "dynamiczone"
+                  },
+                  "footer": {
+                    "type": "dynamiczone"
+                  },
+                  "header_class": {
+                    "type": "string"
+                  },
+                  "header_background": {
+                    "type": "component"
+                  },
+                  "header_color": {
+                    "type": "component"
+                  },
+                  "footer_background": {
+                    "type": "component"
+                  },
+                  "footer_color": {
+                    "type": "component"
+                  },
+                  "primary_color": {
+                    "type": "component"
+                  },
+                  "background_color": {
+                    "type": "component"
+                  },
+                  "menu_color": {
+                    "type": "component"
+                  },
+                  "heading_color": {
+                    "type": "component"
+                  },
+                  "link_color": {
+                    "type": "component"
+                  },
+                  "nuxt_layout": {
+                    "type": "string"
+                  },
+                  "page_not_found": {
+                    "type": "string"
+                  },
+                  "page_not_found_background": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "authentication": {
+            "type": "boolean",
+            "default": false
+          },
+          "articles_loop_mode": {
+            "type": "string",
+            "default": "modern",
+            "enum": [
+              "classic",
+              "modern",
+              "news"
+            ]
+          }
+        }
+      },
+      "NewSettings": {
+        "required": [
+          "site_name",
+          "current_theme"
+        ],
+        "properties": {
+          "site_name": {
+            "type": "string",
+            "default": "nuxpresso"
+          },
+          "site_title": {
+            "type": "string",
+            "default": "Just a nuxpresso site"
+          },
+          "show_title": {
+            "type": "boolean",
+            "default": false
+          },
+          "footer": {
+            "type": "string",
+            "default": "nuxpresso - Created with NuxtJS / Strapi / Tailwindcss "
+          },
+          "logo_svg": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "github": {
+            "type": "string"
+          },
+          "twitter": {
+            "type": "string"
+          },
+          "homepage": {
+            "type": "string",
+            "default": "page",
+            "enum": [
+              "page",
+              "last_posts",
+              "page_and_last_posts"
+            ]
+          },
+          "articles_limit": {
+            "type": "integer",
+            "default": 4
+          },
+          "seo": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string",
+                "default": "Create a website using NuxtJS and Strapi"
+              },
+              "title": {
+                "type": "string"
+              }
+            }
+          },
+          "autoimage": {
+            "type": "boolean",
+            "default": true
+          },
+          "breadcrumb": {
+            "type": "boolean",
+            "default": true
+          },
+          "darkmode": {
+            "type": "boolean",
+            "default": true
+          },
+          "current_theme": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "theme": {
+                "required": [
+                  "id",
+                  "name",
+                  "header"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "json": {
+                    "type": "object"
+                  },
+                  "theme": {
+                    "type": "string"
+                  },
+                  "header": {
+                    "type": "dynamiczone"
+                  },
+                  "footer": {
+                    "type": "dynamiczone"
+                  },
+                  "header_class": {
+                    "type": "string"
+                  },
+                  "header_background": {
+                    "type": "component"
+                  },
+                  "header_color": {
+                    "type": "component"
+                  },
+                  "footer_background": {
+                    "type": "component"
+                  },
+                  "footer_color": {
+                    "type": "component"
+                  },
+                  "primary_color": {
+                    "type": "component"
+                  },
+                  "background_color": {
+                    "type": "component"
+                  },
+                  "menu_color": {
+                    "type": "component"
+                  },
+                  "heading_color": {
+                    "type": "component"
+                  },
+                  "link_color": {
+                    "type": "component"
+                  },
+                  "nuxt_layout": {
+                    "type": "string"
+                  },
+                  "page_not_found": {
+                    "type": "string"
+                  },
+                  "page_not_found_background": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "authentication": {
+            "type": "boolean",
+            "default": false
+          },
+          "articles_loop_mode": {
+            "type": "string",
+            "default": "modern",
+            "enum": [
+              "classic",
+              "modern",
+              "news"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Settings"
+    }
+  ]
+}

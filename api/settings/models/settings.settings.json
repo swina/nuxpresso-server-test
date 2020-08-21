@@ -1,0 +1,114 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "name": "settings"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "site_name": {
+      "type": "string",
+      "default": "nuxpresso",
+      "required": true
+    },
+    "site_title": {
+      "type": "string",
+      "default": "Just a nuxpresso site"
+    },
+    "show_title": {
+      "type": "boolean",
+      "default": false
+    },
+    "footer": {
+      "type": "text",
+      "default": "nuxpresso - Created with NuxtJS / Strapi / Tailwindcss "
+    },
+    "logo_img": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "email": {
+      "type": "string"
+    },
+    "github": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "articles_limit": {
+      "default": 4,
+      "type": "integer",
+      "min": 2
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo"
+    },
+    "header": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "autoimage": {
+      "type": "boolean",
+      "default": true
+    },
+    "breadcrumb": {
+      "type": "boolean",
+      "default": true
+    },
+    "darkmode": {
+      "type": "boolean",
+      "default": true
+    },
+    "current_theme": {
+      "type": "component",
+      "repeatable": false,
+      "component": "themes.theme",
+      "required": true
+    },
+    "authentication": {
+      "type": "boolean",
+      "default": false
+    },
+    "articles_loop_mode": {
+      "type": "enumeration",
+      "enum": [
+        "classic",
+        "modern",
+        "news",
+        "boxed"
+      ],
+      "default": "modern"
+    },
+    "darkmode_settings": {
+      "type": "component",
+      "repeatable": false,
+      "component": "themes.dark-mode"
+    },
+    "read_more": {
+      "type": "string",
+      "default": "READ MORE"
+    },
+    "scrolltop": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

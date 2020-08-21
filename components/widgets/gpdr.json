@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_widgets_gpdrs",
+  "info": {
+    "name": "GPDR",
+    "icon": "user-tag"
+  },
+  "options": {},
+  "attributes": {
+    "background": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.background"
+    },
+    "foreground": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.foreground"
+    },
+    "cookie_name": {
+      "type": "string"
+    },
+    "cookie_expiration": {
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "widgets.button"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "css": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "enumeration",
+      "enum": [
+        "sticky",
+        "modal"
+      ]
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "top",
+        "bottom",
+        "center"
+      ]
+    }
+  }
+}

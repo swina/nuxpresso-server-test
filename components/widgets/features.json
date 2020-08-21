@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_widgets_features",
+  "info": {
+    "name": "features",
+    "icon": "bullhorn"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "material_icon": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "price": {
+      "type": "string"
+    },
+    "sale": {
+      "type": "string"
+    },
+    "button": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

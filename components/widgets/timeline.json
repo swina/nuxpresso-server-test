@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_widgets_timelines",
+  "info": {
+    "name": "Timeline",
+    "icon": "stopwatch"
+  },
+  "options": {},
+  "attributes": {
+    "time_event": {
+      "type": "component",
+      "repeatable": true,
+      "component": "widgets.time-event"
+    }
+  }
+}

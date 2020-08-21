@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_forms_forms",
+  "info": {
+    "name": "Form",
+    "icon": "tv"
+  },
+  "options": {},
+  "attributes": {
+    "field": {
+      "type": "component",
+      "repeatable": true,
+      "component": "forms.field"
+    },
+    "action": {
+      "type": "enumeration",
+      "enum": [
+        "contacts",
+        "login"
+      ]
+    },
+    "custom_action": {
+      "type": "string"
+    }
+  }
+}

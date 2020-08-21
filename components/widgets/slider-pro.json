@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_widgets_slider_pros",
+  "info": {
+    "name": "Slider Pro",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.slide"
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "delay": {
+      "type": "integer",
+      "min": 1,
+      "default": 4
+    },
+    "navigator": {
+      "type": "boolean"
+    },
+    "navigator_icon": {
+      "type": "string"
+    },
+    "miniature": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

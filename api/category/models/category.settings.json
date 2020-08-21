@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Categories",
+  "info": {
+    "name": "Category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "automenu": {
+      "type": "boolean",
+      "default": false
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

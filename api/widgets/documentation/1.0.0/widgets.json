@@ -1,0 +1,4340 @@
+{
+  "paths": {
+    "/widgets": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the widgets's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve widgets document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Widgets"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Widgets"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new widgets record",
+        "responses": {
+          "200": {
+            "description": "Retrieve widgets document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Widgets"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Widgets"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewWidgets"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/widgets/count": {
+      "get": {
+        "deprecated": false,
+        "description": "Retrieve the numver of widgets documents",
+        "responses": {
+          "200": {
+            "description": "Retrieve widgets document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Widgets"
+        ],
+        "parameters": []
+      }
+    },
+    "/widgets/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one widgets record",
+        "responses": {
+          "200": {
+            "description": "Retrieve widgets document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Widgets"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Widgets"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single widgets record",
+        "responses": {
+          "200": {
+            "description": "Retrieve widgets document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Widgets"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Widgets"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewWidgets"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single widgets record",
+        "responses": {
+          "200": {
+            "description": "deletes a single widgets based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Widgets"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Widgets": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "component": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "button": {
+                      "type": "boolean"
+                    },
+                    "button_text": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "default": "cta_"
+                    },
+                    "link_url": {
+                      "type": "string"
+                    },
+                    "background": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "color": {
+                          "type": "string",
+                          "enum": [
+                            "transparent",
+                            "white",
+                            "black",
+                            "gray",
+                            "red",
+                            "orange",
+                            "yellow",
+                            "green",
+                            "teal",
+                            "blue",
+                            "indigo",
+                            "purple",
+                            "pink"
+                          ]
+                        },
+                        "density": {
+                          "type": "string",
+                          "enum": [
+                            "extralight",
+                            "verylight",
+                            "light",
+                            "mediumlight",
+                            "normal",
+                            "mediumdark",
+                            "dark",
+                            "verydark",
+                            "extradark"
+                          ]
+                        },
+                        "css": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "required": [
+                            "id",
+                            "name",
+                            "hash",
+                            "mime",
+                            "size",
+                            "url",
+                            "provider"
+                          ],
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "alternativeText": {
+                              "type": "string"
+                            },
+                            "caption": {
+                              "type": "string"
+                            },
+                            "width": {
+                              "type": "integer"
+                            },
+                            "height": {
+                              "type": "integer"
+                            },
+                            "formats": {
+                              "type": "object"
+                            },
+                            "hash": {
+                              "type": "string"
+                            },
+                            "ext": {
+                              "type": "string"
+                            },
+                            "mime": {
+                              "type": "string"
+                            },
+                            "size": {
+                              "type": "number"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "previewUrl": {
+                              "type": "string"
+                            },
+                            "provider": {
+                              "type": "string"
+                            },
+                            "provider_metadata": {
+                              "type": "object"
+                            },
+                            "related": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "link_url": {
+                      "type": "string",
+                      "default": "#"
+                    },
+                    "enabled": {
+                      "type": "boolean",
+                      "default": true
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "material_icon": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "string"
+                    },
+                    "sale": {
+                      "type": "string"
+                    },
+                    "button": {
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "hash",
+                          "mime",
+                          "size",
+                          "url",
+                          "provider"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "alternativeText": {
+                            "type": "string"
+                          },
+                          "caption": {
+                            "type": "string"
+                          },
+                          "width": {
+                            "type": "integer"
+                          },
+                          "height": {
+                            "type": "integer"
+                          },
+                          "formats": {
+                            "type": "object"
+                          },
+                          "hash": {
+                            "type": "string"
+                          },
+                          "ext": {
+                            "type": "string"
+                          },
+                          "mime": {
+                            "type": "string"
+                          },
+                          "size": {
+                            "type": "number"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "previewUrl": {
+                            "type": "string"
+                          },
+                          "provider": {
+                            "type": "string"
+                          },
+                          "provider_metadata": {
+                            "type": "object"
+                          },
+                          "related": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "button": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          },
+                          "link_url": {
+                            "type": "string",
+                            "default": "#"
+                          },
+                          "enabled": {
+                            "type": "boolean",
+                            "default": true
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "default": 4
+                    },
+                    "last": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "display": {
+                      "type": "string",
+                      "enum": [
+                        "classic",
+                        "modern",
+                        "news",
+                        "slider"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "headline": {
+                      "type": "string"
+                    },
+                    "show_name": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "show_headline": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "image"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "string"
+                    },
+                    "sale": {
+                      "type": "string"
+                    },
+                    "list_included": {
+                      "type": "string"
+                    },
+                    "list_excluded": {
+                      "type": "string"
+                    },
+                    "action": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          },
+                          "link_url": {
+                            "type": "string",
+                            "default": "#"
+                          },
+                          "enabled": {
+                            "type": "boolean",
+                            "default": true
+                          }
+                        }
+                      }
+                    },
+                    "class": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "text",
+                        "textarea",
+                        "password",
+                        "email",
+                        "number",
+                        "range",
+                        "select",
+                        "checkbox",
+                        "radio",
+                        "submit",
+                        "hidden"
+                      ]
+                    },
+                    "required": {
+                      "type": "boolean"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "default": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "field": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "text",
+                              "textarea",
+                              "password",
+                              "email",
+                              "number",
+                              "range",
+                              "select",
+                              "checkbox",
+                              "radio",
+                              "submit",
+                              "hidden"
+                            ]
+                          },
+                          "required": {
+                            "type": "boolean"
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "default": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "action": {
+                      "type": "string",
+                      "enum": [
+                        "contacts",
+                        "login"
+                      ]
+                    },
+                    "custom_action": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "features_item": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "required": [
+                              "id",
+                              "name",
+                              "hash",
+                              "mime",
+                              "size",
+                              "url",
+                              "provider"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "alternativeText": {
+                                "type": "string"
+                              },
+                              "caption": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              },
+                              "height": {
+                                "type": "integer"
+                              },
+                              "formats": {
+                                "type": "object"
+                              },
+                              "hash": {
+                                "type": "string"
+                              },
+                              "ext": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "size": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "previewUrl": {
+                                "type": "string"
+                              },
+                              "provider": {
+                                "type": "string"
+                              },
+                              "provider_metadata": {
+                                "type": "object"
+                              },
+                              "related": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "material_icon": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "string"
+                          },
+                          "sale": {
+                            "type": "string"
+                          },
+                          "button": {
+                            "type": "string"
+                          },
+                          "link": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "Article": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "article": {
+                            "required": [
+                              "id",
+                              "seo"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "excerpt": {
+                                "type": "string"
+                              },
+                              "content": {
+                                "type": "string"
+                              },
+                              "image": {
+                                "type": "string"
+                              },
+                              "categories": {
+                                "type": "string"
+                              },
+                              "gallery": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "slug": {
+                                "type": "string"
+                              },
+                              "seo": {
+                                "type": "component"
+                              },
+                              "homepage": {
+                                "type": "boolean"
+                              },
+                              "user": {
+                                "type": "string"
+                              },
+                              "menu": {
+                                "type": "boolean"
+                              },
+                              "component": {
+                                "type": "dynamiczone"
+                              },
+                              "widgets": {
+                                "type": "string"
+                              },
+                              "random_image": {
+                                "type": "boolean"
+                              },
+                              "list_exclude": {
+                                "type": "boolean"
+                              },
+                              "parent": {
+                                "type": "string"
+                              },
+                              "tags": {
+                                "type": "string"
+                              },
+                              "image_title": {
+                                "type": "string"
+                              },
+                              "template": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "display": {
+                      "type": "string",
+                      "enum": [
+                        "classic",
+                        "modern",
+                        "news",
+                        "slider"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "required": [
+                              "id",
+                              "name",
+                              "hash",
+                              "mime",
+                              "size",
+                              "url",
+                              "provider"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "alternativeText": {
+                                "type": "string"
+                              },
+                              "caption": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              },
+                              "height": {
+                                "type": "integer"
+                              },
+                              "formats": {
+                                "type": "object"
+                              },
+                              "hash": {
+                                "type": "string"
+                              },
+                              "ext": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "size": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "previewUrl": {
+                                "type": "string"
+                              },
+                              "provider": {
+                                "type": "string"
+                              },
+                              "provider_metadata": {
+                                "type": "object"
+                              },
+                              "related": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "material_icon": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "string"
+                          },
+                          "sale": {
+                            "type": "string"
+                          },
+                          "button": {
+                            "type": "string"
+                          },
+                          "link": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "class": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "longitude": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "string"
+                    },
+                    "address": {
+                      "type": "string"
+                    },
+                    "destination": {
+                      "type": "string"
+                    },
+                    "traffic": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "default",
+                        "terrain"
+                      ]
+                    },
+                    "ui": {
+                      "type": "boolean"
+                    },
+                    "draw": {
+                      "type": "string",
+                      "enum": [
+                        "none",
+                        "line",
+                        "polygon",
+                        "overlay"
+                      ]
+                    },
+                    "image_overlay": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "draw_fill_color": {
+                      "type": "string"
+                    },
+                    "draw_stroke_color": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "slides": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "required": [
+                              "id",
+                              "name",
+                              "hash",
+                              "mime",
+                              "size",
+                              "url",
+                              "provider"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "alternativeText": {
+                                "type": "string"
+                              },
+                              "caption": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              },
+                              "height": {
+                                "type": "integer"
+                              },
+                              "formats": {
+                                "type": "object"
+                              },
+                              "hash": {
+                                "type": "string"
+                              },
+                              "ext": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "size": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "previewUrl": {
+                                "type": "string"
+                              },
+                              "provider": {
+                                "type": "string"
+                              },
+                              "provider_metadata": {
+                                "type": "object"
+                              },
+                              "related": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "button": {
+                            "type": "string"
+                          },
+                          "button_link": {
+                            "type": "string"
+                          },
+                          "css": {
+                            "type": "string"
+                          },
+                          "background_color": {
+                            "type": "string",
+                            "default": "transparent",
+                            "enum": [
+                              "transparent",
+                              "white",
+                              "black",
+                              "gray",
+                              "red",
+                              "orange",
+                              "yellow",
+                              "green",
+                              "teal",
+                              "blue",
+                              "indigo",
+                              "purple",
+                              "pink"
+                            ]
+                          },
+                          "background_tone": {
+                            "type": "string",
+                            "default": "normal",
+                            "enum": [
+                              "extralight",
+                              "verylight",
+                              "light",
+                              "mediumlight",
+                              "normal",
+                              "mediumdark",
+                              "dark",
+                              "verydark",
+                              "extradark"
+                            ]
+                          },
+                          "image_for_description": {
+                            "required": [
+                              "id",
+                              "name",
+                              "hash",
+                              "mime",
+                              "size",
+                              "url",
+                              "provider"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "alternativeText": {
+                                "type": "string"
+                              },
+                              "caption": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              },
+                              "height": {
+                                "type": "integer"
+                              },
+                              "formats": {
+                                "type": "object"
+                              },
+                              "hash": {
+                                "type": "string"
+                              },
+                              "ext": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "size": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "previewUrl": {
+                                "type": "string"
+                              },
+                              "provider": {
+                                "type": "string"
+                              },
+                              "provider_metadata": {
+                                "type": "object"
+                              },
+                              "related": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "box_background": {
+                            "type": "string",
+                            "enum": [
+                              "transparent",
+                              "white",
+                              "black",
+                              "gray",
+                              "red",
+                              "orange",
+                              "yellow",
+                              "green",
+                              "teal",
+                              "blue",
+                              "indigo",
+                              "purple",
+                              "pink"
+                            ]
+                          },
+                          "box_css": {
+                            "type": "string"
+                          },
+                          "text_color": {
+                            "type": "string",
+                            "enum": [
+                              "transparent",
+                              "white",
+                              "black",
+                              "gray",
+                              "red",
+                              "orange",
+                              "yellow",
+                              "green",
+                              "teal",
+                              "blue",
+                              "indigo",
+                              "purple",
+                              "pink"
+                            ]
+                          },
+                          "text_tone": {
+                            "type": "string",
+                            "enum": [
+                              "extralight",
+                              "verylight",
+                              "light",
+                              "mediumlight",
+                              "normal",
+                              "mediumdark",
+                              "dark",
+                              "verydark",
+                              "extradark"
+                            ]
+                          },
+                          "box_background_tone": {
+                            "type": "string",
+                            "enum": [
+                              "extralight",
+                              "verylight",
+                              "light",
+                              "mediumlight",
+                              "normal",
+                              "mediumdark",
+                              "dark",
+                              "verydark",
+                              "extradark"
+                            ]
+                          },
+                          "box_opacity": {
+                            "type": "string",
+                            "default": "75"
+                          },
+                          "box_height": {
+                            "type": "integer",
+                            "default": 70
+                          }
+                        }
+                      }
+                    },
+                    "autoplay": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "delay": {
+                      "type": "integer",
+                      "default": 4
+                    },
+                    "navigator": {
+                      "type": "boolean"
+                    },
+                    "navigator_icon": {
+                      "type": "string"
+                    },
+                    "miniature": {
+                      "type": "boolean",
+                      "default": false
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "social_share": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "icon": {
+                            "required": [
+                              "id"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "svg": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "display_name": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "vertical": {
+                      "type": "boolean",
+                      "default": true
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "time_event": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "time": {
+                            "type": "string"
+                          },
+                          "event": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "buttons": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          },
+                          "link_url": {
+                            "type": "string",
+                            "default": "#"
+                          },
+                          "enabled": {
+                            "type": "boolean",
+                            "default": true
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "default": 0
+          },
+          "class": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string",
+            "default": "after",
+            "enum": [
+              "after",
+              "before",
+              "shortcode"
+            ]
+          },
+          "shortcode": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "component_class": {
+            "type": "string"
+          },
+          "fullwidth": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      },
+      "NewWidgets": {
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "component": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "button": {
+                      "type": "boolean"
+                    },
+                    "button_text": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "default": "cta_"
+                    },
+                    "link_url": {
+                      "type": "string"
+                    },
+                    "background": {
+                      "type": "object",
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "color": {
+                          "type": "string",
+                          "enum": [
+                            "transparent",
+                            "white",
+                            "black",
+                            "gray",
+                            "red",
+                            "orange",
+                            "yellow",
+                            "green",
+                            "teal",
+                            "blue",
+                            "indigo",
+                            "purple",
+                            "pink"
+                          ]
+                        },
+                        "density": {
+                          "type": "string",
+                          "enum": [
+                            "extralight",
+                            "verylight",
+                            "light",
+                            "mediumlight",
+                            "normal",
+                            "mediumdark",
+                            "dark",
+                            "verydark",
+                            "extradark"
+                          ]
+                        },
+                        "css": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "required": [
+                            "id",
+                            "name",
+                            "hash",
+                            "mime",
+                            "size",
+                            "url",
+                            "provider"
+                          ],
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "alternativeText": {
+                              "type": "string"
+                            },
+                            "caption": {
+                              "type": "string"
+                            },
+                            "width": {
+                              "type": "integer"
+                            },
+                            "height": {
+                              "type": "integer"
+                            },
+                            "formats": {
+                              "type": "object"
+                            },
+                            "hash": {
+                              "type": "string"
+                            },
+                            "ext": {
+                              "type": "string"
+                            },
+                            "mime": {
+                              "type": "string"
+                            },
+                            "size": {
+                              "type": "number"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "previewUrl": {
+                              "type": "string"
+                            },
+                            "provider": {
+                              "type": "string"
+                            },
+                            "provider_metadata": {
+                              "type": "object"
+                            },
+                            "related": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "text": {
+                      "type": "string"
+                    },
+                    "link_url": {
+                      "type": "string",
+                      "default": "#"
+                    },
+                    "enabled": {
+                      "type": "boolean",
+                      "default": true
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "material_icon": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "string"
+                    },
+                    "sale": {
+                      "type": "string"
+                    },
+                    "button": {
+                      "type": "string"
+                    },
+                    "link": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "subtitle": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name",
+                          "hash",
+                          "mime",
+                          "size",
+                          "url",
+                          "provider"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "alternativeText": {
+                            "type": "string"
+                          },
+                          "caption": {
+                            "type": "string"
+                          },
+                          "width": {
+                            "type": "integer"
+                          },
+                          "height": {
+                            "type": "integer"
+                          },
+                          "formats": {
+                            "type": "object"
+                          },
+                          "hash": {
+                            "type": "string"
+                          },
+                          "ext": {
+                            "type": "string"
+                          },
+                          "mime": {
+                            "type": "string"
+                          },
+                          "size": {
+                            "type": "number"
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "previewUrl": {
+                            "type": "string"
+                          },
+                          "provider": {
+                            "type": "string"
+                          },
+                          "provider_metadata": {
+                            "type": "object"
+                          },
+                          "related": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "button": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          },
+                          "link_url": {
+                            "type": "string",
+                            "default": "#"
+                          },
+                          "enabled": {
+                            "type": "boolean",
+                            "default": true
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "limit": {
+                      "type": "integer",
+                      "default": 4
+                    },
+                    "last": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "display": {
+                      "type": "string",
+                      "enum": [
+                        "classic",
+                        "modern",
+                        "news",
+                        "slider"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "image": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "headline": {
+                      "type": "string"
+                    },
+                    "show_name": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "show_headline": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "image"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "string"
+                    },
+                    "sale": {
+                      "type": "string"
+                    },
+                    "list_included": {
+                      "type": "string"
+                    },
+                    "list_excluded": {
+                      "type": "string"
+                    },
+                    "action": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          },
+                          "link_url": {
+                            "type": "string",
+                            "default": "#"
+                          },
+                          "enabled": {
+                            "type": "boolean",
+                            "default": true
+                          }
+                        }
+                      }
+                    },
+                    "class": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "text",
+                        "textarea",
+                        "password",
+                        "email",
+                        "number",
+                        "range",
+                        "select",
+                        "checkbox",
+                        "radio",
+                        "submit",
+                        "hidden"
+                      ]
+                    },
+                    "required": {
+                      "type": "boolean"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "default": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "field": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "text",
+                              "textarea",
+                              "password",
+                              "email",
+                              "number",
+                              "range",
+                              "select",
+                              "checkbox",
+                              "radio",
+                              "submit",
+                              "hidden"
+                            ]
+                          },
+                          "required": {
+                            "type": "boolean"
+                          },
+                          "label": {
+                            "type": "string"
+                          },
+                          "default": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "action": {
+                      "type": "string",
+                      "enum": [
+                        "contacts",
+                        "login"
+                      ]
+                    },
+                    "custom_action": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "features_item": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "required": [
+                              "id",
+                              "name",
+                              "hash",
+                              "mime",
+                              "size",
+                              "url",
+                              "provider"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "alternativeText": {
+                                "type": "string"
+                              },
+                              "caption": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              },
+                              "height": {
+                                "type": "integer"
+                              },
+                              "formats": {
+                                "type": "object"
+                              },
+                              "hash": {
+                                "type": "string"
+                              },
+                              "ext": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "size": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "previewUrl": {
+                                "type": "string"
+                              },
+                              "provider": {
+                                "type": "string"
+                              },
+                              "provider_metadata": {
+                                "type": "object"
+                              },
+                              "related": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "material_icon": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "string"
+                          },
+                          "sale": {
+                            "type": "string"
+                          },
+                          "button": {
+                            "type": "string"
+                          },
+                          "link": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "Article": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "article": {
+                            "required": [
+                              "id",
+                              "seo"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "excerpt": {
+                                "type": "string"
+                              },
+                              "content": {
+                                "type": "string"
+                              },
+                              "image": {
+                                "type": "string"
+                              },
+                              "categories": {
+                                "type": "string"
+                              },
+                              "gallery": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "slug": {
+                                "type": "string"
+                              },
+                              "seo": {
+                                "type": "component"
+                              },
+                              "homepage": {
+                                "type": "boolean"
+                              },
+                              "user": {
+                                "type": "string"
+                              },
+                              "menu": {
+                                "type": "boolean"
+                              },
+                              "component": {
+                                "type": "dynamiczone"
+                              },
+                              "widgets": {
+                                "type": "string"
+                              },
+                              "random_image": {
+                                "type": "boolean"
+                              },
+                              "list_exclude": {
+                                "type": "boolean"
+                              },
+                              "parent": {
+                                "type": "string"
+                              },
+                              "tags": {
+                                "type": "string"
+                              },
+                              "image_title": {
+                                "type": "string"
+                              },
+                              "template": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "display": {
+                      "type": "string",
+                      "enum": [
+                        "classic",
+                        "modern",
+                        "news",
+                        "slider"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "required": [
+                              "id",
+                              "name",
+                              "hash",
+                              "mime",
+                              "size",
+                              "url",
+                              "provider"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "alternativeText": {
+                                "type": "string"
+                              },
+                              "caption": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              },
+                              "height": {
+                                "type": "integer"
+                              },
+                              "formats": {
+                                "type": "object"
+                              },
+                              "hash": {
+                                "type": "string"
+                              },
+                              "ext": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "size": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "previewUrl": {
+                                "type": "string"
+                              },
+                              "provider": {
+                                "type": "string"
+                              },
+                              "provider_metadata": {
+                                "type": "object"
+                              },
+                              "related": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "material_icon": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "string"
+                          },
+                          "sale": {
+                            "type": "string"
+                          },
+                          "button": {
+                            "type": "string"
+                          },
+                          "link": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "class": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "longitude": {
+                      "type": "string"
+                    },
+                    "latitude": {
+                      "type": "string"
+                    },
+                    "address": {
+                      "type": "string"
+                    },
+                    "destination": {
+                      "type": "string"
+                    },
+                    "traffic": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "default",
+                        "terrain"
+                      ]
+                    },
+                    "ui": {
+                      "type": "boolean"
+                    },
+                    "draw": {
+                      "type": "string",
+                      "enum": [
+                        "none",
+                        "line",
+                        "polygon",
+                        "overlay"
+                      ]
+                    },
+                    "image_overlay": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "draw_fill_color": {
+                      "type": "string"
+                    },
+                    "draw_stroke_color": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "slides": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "title": {
+                            "type": "string"
+                          },
+                          "subtitle": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "required": [
+                              "id",
+                              "name",
+                              "hash",
+                              "mime",
+                              "size",
+                              "url",
+                              "provider"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "alternativeText": {
+                                "type": "string"
+                              },
+                              "caption": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              },
+                              "height": {
+                                "type": "integer"
+                              },
+                              "formats": {
+                                "type": "object"
+                              },
+                              "hash": {
+                                "type": "string"
+                              },
+                              "ext": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "size": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "previewUrl": {
+                                "type": "string"
+                              },
+                              "provider": {
+                                "type": "string"
+                              },
+                              "provider_metadata": {
+                                "type": "object"
+                              },
+                              "related": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "button": {
+                            "type": "string"
+                          },
+                          "button_link": {
+                            "type": "string"
+                          },
+                          "css": {
+                            "type": "string"
+                          },
+                          "background_color": {
+                            "type": "string",
+                            "default": "transparent",
+                            "enum": [
+                              "transparent",
+                              "white",
+                              "black",
+                              "gray",
+                              "red",
+                              "orange",
+                              "yellow",
+                              "green",
+                              "teal",
+                              "blue",
+                              "indigo",
+                              "purple",
+                              "pink"
+                            ]
+                          },
+                          "background_tone": {
+                            "type": "string",
+                            "default": "normal",
+                            "enum": [
+                              "extralight",
+                              "verylight",
+                              "light",
+                              "mediumlight",
+                              "normal",
+                              "mediumdark",
+                              "dark",
+                              "verydark",
+                              "extradark"
+                            ]
+                          },
+                          "image_for_description": {
+                            "required": [
+                              "id",
+                              "name",
+                              "hash",
+                              "mime",
+                              "size",
+                              "url",
+                              "provider"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "alternativeText": {
+                                "type": "string"
+                              },
+                              "caption": {
+                                "type": "string"
+                              },
+                              "width": {
+                                "type": "integer"
+                              },
+                              "height": {
+                                "type": "integer"
+                              },
+                              "formats": {
+                                "type": "object"
+                              },
+                              "hash": {
+                                "type": "string"
+                              },
+                              "ext": {
+                                "type": "string"
+                              },
+                              "mime": {
+                                "type": "string"
+                              },
+                              "size": {
+                                "type": "number"
+                              },
+                              "url": {
+                                "type": "string"
+                              },
+                              "previewUrl": {
+                                "type": "string"
+                              },
+                              "provider": {
+                                "type": "string"
+                              },
+                              "provider_metadata": {
+                                "type": "object"
+                              },
+                              "related": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "box_background": {
+                            "type": "string",
+                            "enum": [
+                              "transparent",
+                              "white",
+                              "black",
+                              "gray",
+                              "red",
+                              "orange",
+                              "yellow",
+                              "green",
+                              "teal",
+                              "blue",
+                              "indigo",
+                              "purple",
+                              "pink"
+                            ]
+                          },
+                          "box_css": {
+                            "type": "string"
+                          },
+                          "text_color": {
+                            "type": "string",
+                            "enum": [
+                              "transparent",
+                              "white",
+                              "black",
+                              "gray",
+                              "red",
+                              "orange",
+                              "yellow",
+                              "green",
+                              "teal",
+                              "blue",
+                              "indigo",
+                              "purple",
+                              "pink"
+                            ]
+                          },
+                          "text_tone": {
+                            "type": "string",
+                            "enum": [
+                              "extralight",
+                              "verylight",
+                              "light",
+                              "mediumlight",
+                              "normal",
+                              "mediumdark",
+                              "dark",
+                              "verydark",
+                              "extradark"
+                            ]
+                          },
+                          "box_background_tone": {
+                            "type": "string",
+                            "enum": [
+                              "extralight",
+                              "verylight",
+                              "light",
+                              "mediumlight",
+                              "normal",
+                              "mediumdark",
+                              "dark",
+                              "verydark",
+                              "extradark"
+                            ]
+                          },
+                          "box_opacity": {
+                            "type": "string",
+                            "default": "75"
+                          },
+                          "box_height": {
+                            "type": "integer",
+                            "default": 70
+                          }
+                        }
+                      }
+                    },
+                    "autoplay": {
+                      "type": "boolean",
+                      "default": true
+                    },
+                    "delay": {
+                      "type": "integer",
+                      "default": 4
+                    },
+                    "navigator": {
+                      "type": "boolean"
+                    },
+                    "navigator_icon": {
+                      "type": "string"
+                    },
+                    "miniature": {
+                      "type": "boolean",
+                      "default": false
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "social_share": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "icon": {
+                            "required": [
+                              "id"
+                            ],
+                            "properties": {
+                              "id": {
+                                "type": "string"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "svg": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "url": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "display_name": {
+                      "type": "boolean",
+                      "default": false
+                    },
+                    "vertical": {
+                      "type": "boolean",
+                      "default": true
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "time_event": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "time": {
+                            "type": "string"
+                          },
+                          "event": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "widgets.cta",
+                        "widgets.button",
+                        "widgets.features",
+                        "widgets.slider",
+                        "widgets.articles-list",
+                        "widgets.logo",
+                        "widgets.price-table-item",
+                        "forms.field",
+                        "forms.form",
+                        "widgets.advanced-features",
+                        "widgets.articles-selection",
+                        "widgets.multi-box",
+                        "widgets.map",
+                        "widgets.slider-pro",
+                        "widgets.social-share",
+                        "widgets.timeline",
+                        "widgets.grouped-buttons"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "buttons": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "id"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "text": {
+                            "type": "string"
+                          },
+                          "link_url": {
+                            "type": "string",
+                            "default": "#"
+                          },
+                          "enabled": {
+                            "type": "boolean",
+                            "default": true
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "order": {
+            "type": "integer",
+            "default": 0
+          },
+          "class": {
+            "type": "string"
+          },
+          "position": {
+            "type": "string",
+            "default": "after",
+            "enum": [
+              "after",
+              "before",
+              "shortcode"
+            ]
+          },
+          "shortcode": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "component_class": {
+            "type": "string"
+          },
+          "fullwidth": {
+            "type": "boolean",
+            "default": false
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Widgets"
+    }
+  ]
+}

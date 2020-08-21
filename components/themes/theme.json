@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_themes_themes",
+  "info": {
+    "name": "Theme",
+    "icon": "cubes"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "theme": {
+      "model": "theme"
+    }
+  }
+}

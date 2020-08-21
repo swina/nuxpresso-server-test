@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_widgets_videos",
+  "info": {
+    "name": "Video",
+    "icon": "video"
+  },
+  "options": {},
+  "attributes": {
+    "video_url": {
+      "type": "string"
+    },
+    "autoplay": {
+      "type": "boolean"
+    },
+    "css": {
+      "type": "string"
+    },
+    "video_size": {
+      "type": "string"
+    }
+  }
+}

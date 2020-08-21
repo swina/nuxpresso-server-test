@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_themes_dark_modes",
+  "info": {
+    "name": "Dark mode",
+    "icon": "adjust"
+  },
+  "options": {},
+  "attributes": {
+    "header_bg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.background"
+    },
+    "header_fg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.foreground"
+    },
+    "footer_bg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.background"
+    },
+    "footer_fg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.foreground"
+    },
+    "primary_fg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.foreground"
+    },
+    "main_bg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.background"
+    },
+    "heading_fg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.foreground"
+    },
+    "link_fg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.foreground"
+    },
+    "menu_fg": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.foreground"
+    }
+  }
+}

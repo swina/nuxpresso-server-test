@@ -1,0 +1,71 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "name": "menus"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "primary",
+        "secondary",
+        "dropdown",
+        "treemenu",
+        "footer_1",
+        "footer_2",
+        "footer_3",
+        "footer_4"
+      ],
+      "default": "primary",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menu-items.menu"
+    },
+    "orientation": {
+      "type": "enumeration",
+      "enum": [
+        "horizontal",
+        "vertical"
+      ],
+      "default": "vertical"
+    },
+    "css": {
+      "type": "string"
+    },
+    "background_color": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.colors"
+    },
+    "mobile": {
+      "type": "boolean"
+    },
+    "text_color": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.colors"
+    },
+    "background": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.background"
+    },
+    "foreground": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.foreground"
+    }
+  }
+}

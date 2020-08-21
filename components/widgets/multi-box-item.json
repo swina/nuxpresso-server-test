@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_widgets_multi_purpose_item",
+  "info": {
+    "name": "Multi Purpose Item",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "icon": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "widgets.button"
+    },
+    "css": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "sale": {
+      "type": "string"
+    }
+  }
+}

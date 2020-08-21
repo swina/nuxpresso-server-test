@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_menu_menus",
+  "info": {
+    "name": "item",
+    "icon": "ellipsis-h"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "article": {
+      "model": "article"
+    },
+    "order": {
+      "type": "integer",
+      "default": 99
+    },
+    "category": {
+      "model": "category"
+    },
+    "link_url": {
+      "type": "string"
+    },
+    "submenu": {
+      "model": "menus"
+    },
+    "css": {
+      "type": "string"
+    }
+  }
+}

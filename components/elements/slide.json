@@ -1,0 +1,161 @@
+{
+  "collectionName": "components_elements_slides",
+  "info": {
+    "name": "Slide",
+    "icon": "file-import"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "button": {
+      "type": "string"
+    },
+    "button_link": {
+      "type": "string"
+    },
+    "css": {
+      "type": "string"
+    },
+    "background_color": {
+      "type": "enumeration",
+      "enum": [
+        "transparent",
+        "white",
+        "black",
+        "gray",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "blue",
+        "indigo",
+        "purple",
+        "pink"
+      ],
+      "default": "transparent"
+    },
+    "background_tone": {
+      "type": "enumeration",
+      "enum": [
+        "extralight",
+        "verylight",
+        "light",
+        "mediumlight",
+        "normal",
+        "mediumdark",
+        "dark",
+        "verydark",
+        "extradark"
+      ],
+      "default": "normal"
+    },
+    "image_for_description": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "box_background": {
+      "type": "enumeration",
+      "enum": [
+        "transparent",
+        "white",
+        "black",
+        "gray",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "blue",
+        "indigo",
+        "purple",
+        "pink"
+      ]
+    },
+    "box_css": {
+      "type": "string"
+    },
+    "text_color": {
+      "type": "enumeration",
+      "enum": [
+        "transparent",
+        "white",
+        "black",
+        "gray",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "teal",
+        "blue",
+        "indigo",
+        "purple",
+        "pink"
+      ]
+    },
+    "text_tone": {
+      "type": "enumeration",
+      "enum": [
+        "extralight",
+        "verylight",
+        "light",
+        "mediumlight",
+        "normal",
+        "mediumdark",
+        "dark",
+        "verydark",
+        "extradark"
+      ]
+    },
+    "box_background_tone": {
+      "type": "enumeration",
+      "enum": [
+        "extralight",
+        "verylight",
+        "light",
+        "mediumlight",
+        "normal",
+        "mediumdark",
+        "dark",
+        "verydark",
+        "extradark"
+      ]
+    },
+    "box_opacity": {
+      "type": "string",
+      "default": "75"
+    },
+    "box_height": {
+      "type": "integer",
+      "default": 70,
+      "max": 100,
+      "min": 20
+    }
+  }
+}

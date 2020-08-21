@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_elements_content",
+  "info": {
+    "name": "Content",
+    "icon": "balance-scale"
+  },
+  "options": {},
+  "attributes": {
+    "class": {
+      "type": "string"
+    },
+    "menu": {
+      "model": "menus"
+    },
+    "content": {
+      "type": "string"
+    },
+    "widget": {
+      "model": "widgets"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "paragraph": {
+      "type": "text"
+    },
+    "name": {
+      "type": "string",
+      "default": "content"
+    },
+    "link_url": {
+      "type": "string"
+    },
+    "video": {
+      "type": "string"
+    },
+    "video_size": {
+      "type": "string"
+    }
+  }
+}
