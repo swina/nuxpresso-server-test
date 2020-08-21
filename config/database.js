@@ -3,14 +3,14 @@ module.exports = ({ env }) => ({
   connections: {
     default: {
       connector: 'bookshelf',
-      settings: {
-        client: 'postgres',
-        host: env('DATABASE_URL'),
-        port: env.int('DATABASE_PORT'),
-        database: env('DATABASE_NAME'),
-        username: env('DATABASE_USERNAME'),
-        password: env('DATABASE_PASSWORD'),
-        ssl: env.bool('DATABASE_SSL'),
+      "settings": {
+        "client": "postgres",
+        "host": "${process.env.DATABASE_HOST}",
+        "port": "${process.env.DATABASE_PORT}",
+        "database": "${process.env.DATABASE_NAME}",
+        "username": "${process.env.DATABASE_USERNAME}",
+        "password": "${process.env.DATABASE_PASSWORD}",
+        "ssl": { "rejectUnauthorized": false }
       },
       options: {}
     },
