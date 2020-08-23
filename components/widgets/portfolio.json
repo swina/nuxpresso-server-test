@@ -1,0 +1,72 @@
+{
+  "collectionName": "components_widgets_portfolios",
+  "info": {
+    "name": "Portfolio Element",
+    "icon": "passport"
+  },
+  "options": {},
+  "attributes": {
+    "css": {
+      "type": "string"
+    },
+    "link_url": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "title_type": {
+      "type": "enumeration",
+      "enum": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5"
+      ]
+    },
+    "subtitle_type": {
+      "type": "enumeration",
+      "enum": [
+        "H1",
+        "H2",
+        "H3",
+        "H4",
+        "H5"
+      ]
+    },
+    "description_size": {
+      "type": "enumeration",
+      "enum": [
+        "xs",
+        "sm",
+        "base",
+        "lg",
+        "xl"
+      ]
+    },
+    "button": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

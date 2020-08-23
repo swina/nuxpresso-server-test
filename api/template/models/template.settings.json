@@ -46,6 +46,9 @@
     },
     "col_3_class": {
       "type": "string"
+    },
+    "breadcrumb": {
+      "type": "boolean"
     }
   }
 }

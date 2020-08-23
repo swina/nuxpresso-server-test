@@ -22,7 +22,8 @@
         "widgets.timeline",
         "widgets.video",
         "forms.form",
-        "widgets.gpdr"
+        "widgets.gpdr",
+        "widgets.portfolio-container"
       ]
     },
     "name": {

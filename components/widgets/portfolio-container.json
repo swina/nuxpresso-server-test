@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_widgets_portfolio_containers",
+  "info": {
+    "name": "Portfolio Container",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "widgets.portfolio"
+    },
+    "max_columns": {
+      "type": "integer",
+      "default": 3,
+      "max": 5,
+      "min": 1
+    },
+    "factor": {
+      "type": "enumeration",
+      "enum": [
+        "square",
+        "wide",
+        "extrawide"
+      ]
+    },
+    "css": {
+      "type": "string"
+    }
+  }
+}
