@@ -10,6 +10,9 @@
       "type": "component",
       "repeatable": true,
       "component": "widgets.time-event"
+    },
+    "css": {
+      "type": "string"
     }
   }
 }

@@ -21,8 +21,13 @@ const fields = [ 'header_bg' , 'header_fg' , 'footer_bg' , 'footer_fg' , 'primar
 
 function getColor ( color , tone ){
     return color != 'white' && color != 'black' && color != 'transparent' ?
-        color + '-' + density[tone] : color
+        color + '-' + density[getTone(tone)] : color
 }
+
+function getTone ( tone ){
+    return tone ? tone : 'normal'
+}
+
 
 module.exports = {
     lifecycles : {

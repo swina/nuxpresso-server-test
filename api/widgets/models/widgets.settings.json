@@ -23,7 +23,8 @@
         "widgets.video",
         "forms.form",
         "widgets.gpdr",
-        "widgets.portfolio-container"
+        "widgets.portfolio-container",
+        "widgets.call-to-action"
       ]
     },
     "name": {

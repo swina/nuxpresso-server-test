@@ -96,7 +96,8 @@
         "indigo",
         "purple",
         "pink"
-      ]
+      ],
+      "default": "transparent"
     },
     "box_css": {
       "type": "string"
@@ -117,7 +118,8 @@
         "indigo",
         "purple",
         "pink"
-      ]
+      ],
+      "default": "black"
     },
     "text_tone": {
       "type": "enumeration",
@@ -131,7 +133,8 @@
         "dark",
         "verydark",
         "extradark"
-      ]
+      ],
+      "default": "normal"
     },
     "box_background_tone": {
       "type": "enumeration",
@@ -145,7 +148,8 @@
         "dark",
         "verydark",
         "extradark"
-      ]
+      ],
+      "default": "normal"
     },
     "box_opacity": {
       "type": "string",
@@ -156,6 +160,17 @@
       "default": 70,
       "max": 100,
       "min": 20
+    },
+    "box_width": {
+      "type": "enumeration",
+      "enum": [
+        "auto",
+        "half",
+        "large",
+        "wide",
+        "extrawide"
+      ],
+      "default": "auto"
     }
   }
 }

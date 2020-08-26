@@ -83,6 +83,11 @@
       "repeatable": false,
       "component": "seo.seo",
       "required": true
+    },
+    "lang": {
+      "type": "string",
+      "default": "en",
+      "required": false
     }
   }
 }

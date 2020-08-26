@@ -66,6 +66,16 @@
       "type": "component",
       "repeatable": false,
       "component": "colors.foreground"
+    },
+    "menu_background": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.background"
+    },
+    "menu_foreground": {
+      "type": "component",
+      "repeatable": false,
+      "component": "colors.foreground"
     }
   }
 }

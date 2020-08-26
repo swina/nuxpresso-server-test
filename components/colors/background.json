@@ -22,7 +22,8 @@
         "indigo",
         "purple",
         "pink"
-      ]
+      ],
+      "default": "black"
     },
     "density": {
       "type": "enumeration",
@@ -36,7 +37,8 @@
         "dark",
         "verydark",
         "extradark"
-      ]
+      ],
+      "default": "normal"
     },
     "image": {
       "model": "file",

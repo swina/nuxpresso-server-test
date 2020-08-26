@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_widgets_call_to_actions",
+  "info": {
+    "name": "Call To Action",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "css": {
+      "type": "string"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": false,
+      "component": "elements.slide"
+    },
+    "width": {
+      "type": "enumeration",
+      "enum": [
+        "auto",
+        "full",
+        "half",
+        "large",
+        "wide",
+        "extrawide"
+      ],
+      "default": "auto"
+    },
+    "fullwidth": {
+      "type": "boolean"
+    },
+    "style": {
+      "type": "enumeration",
+      "enum": [
+        "horizontal",
+        "vertical"
+      ],
+      "default": "horizontal"
+    },
+    "fullheight": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

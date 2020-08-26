@@ -17,19 +17,24 @@ const density = {
     extradark: 900 
 }
 
-const fields = [ 'background' , 'foreground' ]
+const fields = [ 'background' , 'foreground' , 'menu_background' , 'menu_foreground' ]
 
 function getColor ( color , tone ){
     return color != 'white' && color != 'black' && color != 'transparent' ?
-        color + '-' + density[tone] : color
+        color + '-' + tone : color // + density[getTone(tone)] : color
 }
+
+function getTone ( tone ){
+    return tone ? tone : 'normal'
+}
+
 module.exports = {
     lifecycles : {
         async beforeCreate(data){
 
             fields.forEach ( field => {
                 if ( data[field] ){
-                    let pref = field === 'background' ? 'bg-' : 'text-'
+                    let pref = field.indexOf('background') > -1 ? 'bg-' : 'text-'
                     data[field].tw_color = pref + getColor ( data[field].color , data[field].density ) 
                 }
             })
@@ -38,7 +43,7 @@ module.exports = {
 
             fields.forEach ( field => {
                 if ( data[field] ){
-                    let pref = field === 'background' ? 'bg-' : 'text-'
+                    let pref = field.indexOf('background') > -1 ? 'bg-' : 'text-'
                     data[field].tw_color = pref + getColor ( data[field].color , data[field].density ) 
                 }
             })

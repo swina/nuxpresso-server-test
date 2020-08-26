@@ -18,7 +18,8 @@
         "dark",
         "verydark",
         "extradark"
-      ]
+      ],
+      "default": "normal"
     },
     "color": {
       "type": "enumeration",
@@ -36,7 +37,8 @@
         "indigo",
         "purple",
         "pink"
-      ]
+      ],
+      "default": "black"
     },
     "css": {
       "type": "string"
