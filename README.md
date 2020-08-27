@@ -1,6 +1,21 @@
-# Nuxpresso Server: a Strapi custom application
+## Roadmap
 
-## Get Started
+We suggest the following roadmap in order to successfully run a complete installation of Nuxpresso (Server and Frontend).
+
+- install locally
+- run a test with some content locally
+- deploy server for production. We suggest to develop the content on the deployed server so you will not need to transfer data locally to the production database
+- create your contents, theme, template and widget following your website design
+- run nuxpresso-nuxt or develop your frontend locally
+- after testing locally your frontend deploy it for production in a stage domain (stage.mydomain.com)
+- switch your domain to the frontend deployed above
+
+
+## Install locally (Development Mode)
+
+In development mode you will install nuxpresso-server and nuxpresso-nuxt on your local machine, in order to check that everything works correctly.
+
+## Install nuxpresso-server
 
 **Requirements**
 
@@ -10,20 +25,19 @@
 
 **Notes**
 
-*DATABASE* : You can switch to another database type like mySQL / MongoDB / SQLite. In order to change database type you need to change the 
-file `./config/database.js`.
+*DATABASE *: You can switch to another database type like mySQL / MongoDB / SQLite. In order to change database type you need to change the file ./config/database.js.
 
-*MEDIA* : You can change you media provider with one of your choice but you need to update the following file: `./config/plugins.js`
+*MEDIA *: You can change you media provider with one of your choice but you need to update the following file: ./config/plugins.js
 
-*MAIL* : You can change your email provider with one of your choice but you need to update the following gile: `./config/plugins.js`
+*MAIL *: You can change your email provider with one of your choice but you need to update the following gile: ./config/plugins.js
 
 ***For all the above settings please read the official Strapi documentation***
 
+**Clone repository**
 
-## Installation
-Clone repository
-
-`git clone https://github.com/swina/nuxpresso-server`
+```
+git clone https://github.com/swina/nuxpresso-server-test
+```
 
 Go to installation directory and run install
 
@@ -59,49 +73,42 @@ MAILGUN_REPLYTO=mailgun_replyto__
 yarn build
 ```
 
-After build your strapi admin import the nuxpresso server configuration from ```./nuxpresso.json```
-
-```
-strapi config:restore -f nuxpresso.json
-```
-
-This update the admin GUI with custom field labels and view configurations
+Run nuxpresso
 
 ```
 yarn develop
 ```
 
-## Application setup
+**Your nuxpresso-server should run at http://localhost:1337/admin**
 
-Connect to http://localhost:1337/admin
+### Create the admin account
 
-#### Create your account
-- Create your admin account
+Create your administrator account
 
-#### Setup roles and permissions
 
-- Go to Roles & Permissions
-- Edit the Public role
-- Set Permissions for Application to *find* and *findone* for 
+### Create the development role and account
 
-    - Article
-    - Category
-    - Menus
-    - Template
-    - Theme
-    - Widgets
-    - Settings
+This is required if you plan to use nuxpresso-customizer (see nuxpresso-nuxt)
 
-- Set Permission for Email checking the *send* option
+- Create a **Development** role
+- Create a new user and assign the Development role
+- Change the Permissions for the Development Role for all the Content types to:
+  - **find, findone, create, update**
 
-#### Create your general settings
+## Deploy nuxpresso-server
 
-From the main menu click
+Depending on the provider you will use follow the official Strapi documentation about deployment.
+We suggest to:
+- create a github repository with your nuxpresso-server 
+- clone your repository on the production server
+- deploy it
 
-- Single Type - Settings
+### nuxpresso-nuxt
 
-Fill with your data and save
+**nuxpresso-nuxt** is the nuxpresso frontend. Check the repo https://github.com/swina/nuxpresso-nuxtjs
 
-#### Create a theme, a template and
 
+## Contribute
+
+I really appreciate any contribution or suggestion. Contribution are managed thru github.com
 
