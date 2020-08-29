@@ -33,16 +33,18 @@ module.exports = {
         async beforeCreate(data){
 
             fields.forEach ( field => {
-                if ( data.darkmode_settings[field] ){
-                    let pref = field.indexOf('bg') > -1 ? 'bg-' : 'text-'
-                    data.darkmode_settings[field].tw_color = pref + getColor ( data.darkmode_settings[field].color , data.darkmode_settings[field].density )  
+                if ( data.darkmode ){
+                    if ( data.darkmode_settings[field] ){
+                        let pref = field.indexOf('bg') > -1 ? 'bg-' : 'text-'
+                        data.darkmode_settings[field].tw_color = pref + getColor ( data.darkmode_settings[field].color , data.darkmode_settings[field].density )  
+                    }
                 }
             })
         },
         async beforeUpdate(params,data){
 
             fields.forEach ( field => {
-                if ( data.darkmode_settings[field] ){
+                if ( data.darkmode && data.darkmode_settings[field] ){
                     let pref = field.indexOf('bg') > -1 ? 'bg-' : 'text-'
                     data.darkmode_settings[field].tw_color = pref + getColor ( data.darkmode_settings[field].color , data.darkmode_settings[field].density ) 
                 }

@@ -11,9 +11,10 @@
  */
 
 module.exports = async () => {   
-    /*    
+    
+    
     const isStartup = await strapi.query('settings').count()
-
+    
     if ( !isStartup ){
         //create 2 basic templates (homepage and default)
         const templateHome = {
@@ -133,123 +134,165 @@ module.exports = async () => {
         }
 
         const createSetting = await strapi.query('settings').create ( setting )
-
-
-        //create a default theme
-        const theme = {
-            "id": "1",
-            "name": "Default",
-            "nuxt_layout": "default",
-            "header_bg": {
-                "color": "blue",
-                "density": "verydark",
-                "image": null,
-                "css": "py-4 lg:py-10 shadow-lg"
-            },
-            "header_fg": {
-                "color": "white",
-                "density": "normal",
-                "css": null
-            },
-            "footer_bg": {
-                "color": "gray",
-                "density": "mediumdark",
-                "image": null,
-                "css": null
-            },
-                "footer_fg": {
-                "color": "gray",
-                "density": "verylight",
-                "css": null
-            },
-            "primary_fg": {
-                "color": "gray",
-                "density": "mediumdark",
-                "css": null
-            },
-            "main_bg": {
-                "color": "gray",
-                "density": "verylight",
-                "css": null
-            },
-            "link_fg": {
-                "color": "blue",
-                "density": "mediumdark",
-                "css": null
-            },
-            "menu_fg": null,
-            "header": [
-                {
-                  "__component": "elements.columns",
-                  "id": 1,
-                  "css": "justify-between",
-                  "column": [
-                    {
-                      "id": 1,
-                      "class": "bg-white py-2 px-4 rounded-xl",
-                      "menu": null,
-                      "content": 'NUXPRESSO',
-                      "widget": null,
-                      "paragraph": null,
-                      "name": "logo",
-                      "link_url" : '/'
-                    },
-                    {
-                      "id": 2,
-                      "class": null,
-                      "menu": null,
-                      "content": null,
-                      "widget": null,
-                      "paragraph": null,
-                      "name": "menu",
-                      "image": null,
-                      "link_url" : '/'
-                    }
-                  ]
-                }
-              ],
-           
-              "footer": [
-                {
-                  "__component": "elements.columns",
-                  "id": 2,
-                  "css": "py-2 lg:py-10 px-2 lg:px-6",
-                  "class": null,
-                  "menu": null,
-                  "content": null,
-                  "widget": null,
-                  "paragraph": null,
-                  "name": null,
-                  "column": [
-                    {
-                      "id": 3,
-                      "class": null,
-                      "menu": null,
-                      "content": "Github",
-                      "widget": null,
-                      "paragraph": null,
-                      "name": "github",
-                      "image": null,
-                      "link_url" : "https://github.com/swina/nuxpresso"
-                    },
-                    {
-                      "id": 5,
-                      "class": null,
-                      "menu": null,
-                      "content": '#Slack',
-                      "widget": null,
-                      "paragraph": null,
-                      "name": "slack",
-                      "image": null,
-                      "link_url" : "https://nuxpresso.slack.com"
-                    }
-                  ]
-                }
-              ],
+        
+        const themeDefault = {
+          "name": "Default",
+          "nuxt_layout": "default",
+          "page_not_found": "<div class=\"text-white\"  style=\"min-height:8rem;font-size:12rem;\">404</div>\n<div class=\"text-white\">Oooops !\nPage your are looking for is not here !\n</div>",
+          "darkmode": null,
+          "header_fixed": false,
+          "header": [
+          {
+            "__component": "elements.columns",
+            "id": 1,
+            "css": "justify-between ",
+            "column": [
+              {
+                "id": 1,
+                "class": "text-gray-500 text-center",
+                "menu": null,
+                "content": "M Y   N E W    S I T E",
+                "widget": null,
+                "paragraph": null,
+                "name": "logo",
+                "link_url": "/",
+                "video": null,
+                "video_size": null,
+                "content_element": "h1",
+                "image": null 
+              }
+            ]
+          }
+        ],
+        "footer": [
+          {
+            "__component": "elements.columns",
+            "id": 2,
+            "css": "py-2 px-2 lg:py-10",
+            "column": [
+              {
+                "id": 9,
+                "class": "w-48 text-xs md:text-sm",
+                "menu": null,
+                "content": "NUXPRESSO",
+                "widget": null,
+                "paragraph": "<div class=\"mt-4 text-sm leading-5 text-gray-400 italic\">nuxpresso is an MIT licensed open source and completely free project that integrates NuxtJS, Strapi CMS, TailwindCSS and GraphQL as a starter in order to create stunning static websites</div>",
+                "name": "Logo",
+                "link_url": null,
+                "video": null,
+                "video_size": null,
+                "content_element": "h4",
+                "image": null
+              },
+              {
+                "id": 3,
+                "class": "",
+                "menu":null,
+                "content": "RESOURCES",
+                "widget": null,
+                "paragraph": null,
+                "name": "Resources",
+                "link_url": null,
+                "video": null,
+                "video_size": null,
+                "content_element": "h4",
+                "image": null
+              },
+              {
+                "id": 4,
+                "class": "text-sm",
+                "menu": null,
+                "content": "COMPANY",
+                "paragraph": "Keyfalan Yaylası cad. Bizimtepe evleri no 55 (91) \nDEMİRCİKÖY SARIYER \nİSTANBUL\nTURKEY",
+                "name": "address",
+                "link_url": null,
+                "video": null,
+                "video_size": null,
+                "content_element": "h4",
+                "image": null
+              }
+            ]
+          }
+        ],
+        "header_bg": {
+          "id": 1,
+          "color": "gray",
+          "density": "verydark",
+          "css": "py-4 lg:py-6 shadow-xl border-b-8 border-blue-700",
+          "tw_color": "bg-gray-800",
+          "image": null
+        },
+        "header_fg": {
+          "id": 1,
+          "density": "",
+          "color": "white",
+          "css": "",
+          "tw_color": "text-white"
+        },
+        "footer_bg": {
+          "id": 2,
+          "color": "gray",
+          "density": "dark",
+          "css": null,
+          "tw_color": "bg-gray-700",
+          "image": null
+        },
+        "footer_fg": {
+          "id": 2,
+          "density": "verylight",
+          "color": "gray",
+          "css": null,
+          "tw_color": "text-gray-200"
+        },
+        "primary_fg": {
+          "id": 3,
+          "density": "dark",
+          "color": "gray",
+          "css": null,
+          "tw_color": "text-gray-700"
+        },
+        "main_bg": {
+          "id": 8,
+          "color": "white",
+          "density": "",
+          "css": null,
+          "tw_color": "bg-white",
+          "image": null
+        },
+        "link_fg": {
+          "id": 4,
+          "density": "mediumdark",
+          "color": "blue",
+          "css": null,
+          "tw_color": "text-blue-600"
+        },
+        "menu_fg": null,
+        "heading_fg": {
+          "id": 28,
+          "density": "dark",
+          "color": "blue",
+          "css": null,
+          "tw_color": "text-blue-700"
+        },
+        "buttons_fg": {
+          "id": 6,
+          "density": null,
+          "color": "white",
+          "css": "hover:text-white",
+          "tw_color": "text-white"
+        },
+        "buttons_bg": {
+          "id": 4,
+          "color": "gray",
+          "density": "verydark",
+          "css": "hover:bg-blue-700",
+          "tw_color": "bg-gray-800",
+          "image": null
+        },
+        "GPDR": null
         }
-        const createTheme = await strapi.query('theme').create(theme)
-    }
-    */
-
+        const createTheme = await strapi.query('theme').create(themeDefault)
     
+  }
+
 };
